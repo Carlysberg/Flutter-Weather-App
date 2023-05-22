@@ -10,23 +10,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   void getLocation()async{
     Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
-    String actualPosition = position.toString();
-    print(actualPosition);
+    print(position);
+  }
+  @override
+  void initState() {
+    super.initState();
+    getLocation();
   }
 
-
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            getLocation();
-          },
-          child: Text('Get Location'),
-        ),
-      ),
+
     );
   }
 }
