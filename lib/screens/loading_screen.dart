@@ -19,8 +19,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   void getData()async{
     var url = Uri.parse(
-        //'https://api.openweathermap.org/data/2.5/weather?lat=${Location().latitude}&lon=${Location().longitude}&appid=${API_KEY}'
-        'http://api.weatherapi.com/v1/current.json?key=<557e792585b448e2a7a131231232305>&q=London'
+        'https://api.openweathermap.org/data/2.5/weather?lat=${Location().latitude}&lon=${Location().longitude}&appid=${API_KEY}'
+
     );
     var response = await http.get(url);
     print('Response status: ${response.statusCode}');
