@@ -7,9 +7,9 @@ double longitude;
 
 class WeatherModel {
 
-  Future<dynamic> cityWeather(String cityName){
+  Future<dynamic> cityWeather(String cityName)async{
     NetworkHelper helper = NetworkHelper('https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=${API_KEY}&units=metric');
-    var weatherData = helper.getData();
+    var weatherData = await helper.getData();
     return weatherData;
   }
 
